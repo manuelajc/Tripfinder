@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PlaceController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Place;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -34,5 +37,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/admin', function () {
+    return Inertia::render('Admin');
+})->middleware(['auth', 'verified'])->name('admin');
+
+Route::get('categories/index', [CategoryController::class, 'index'])->name('admin.categories');
+
+Route::get('places/index', [PlaceController::class, 'index'])->name('admin.places');
+Route::get('places/create', [PlaceController::class, 'create'])->name('admin.places.create');
+Route::post('places/store', [PlaceController::class, 'store'])->name('admin.places.store');
+Route::get('places/edit/{id}', [PlaceController::class, 'edit'])->name('admin.places.edit');
+Route::put('places/update/{id}', [PlaceController::class, 'update'])->name('admin.places.update');
+Route::delete('places/delet/{id}', [PlaceController::class, 'delete'])->name('admin.places.delete');
 
 require __DIR__.'/auth.php';

@@ -7,7 +7,7 @@
                 <h1>Bienvenido Admin</h1>
                 <ul>
                     <li><Link :href="route('admin.categories')" :class="classes">Categorias</Link></li>
-                    <li><Link :href="route('admin.places')" :class="classes">Lugares</Link></li>
+                    <li><Link :href="route('places.index')" :class="classes">Lugares</Link></li>
                 </ul>
             </div>
             <div class="content">

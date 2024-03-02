@@ -44,11 +44,12 @@ Route::get('/admin', function () {
 
 Route::get('categories/index', [CategoryController::class, 'index'])->name('admin.categories');
 
-Route::get('places/index', [PlaceController::class, 'index'])->name('admin.places');
+/* Route::get('places/index', [PlaceController::class, 'index'])->name('admin.places');
 Route::get('places/create', [PlaceController::class, 'create'])->name('admin.places.create');
 Route::post('places/store', [PlaceController::class, 'store'])->name('admin.places.store');
 Route::get('places/edit/{id}', [PlaceController::class, 'edit'])->name('admin.places.edit');
 Route::put('places/update/{id}', [PlaceController::class, 'update'])->name('admin.places.update');
-Route::delete('places/delet/{id}', [PlaceController::class, 'delete'])->name('admin.places.delete');
+Route::delete('places/delet/{id}', [PlaceController::class, 'delete'])->name('admin.places.delete'); */
 
+Route::resource('admin/places', PlaceController::class)->middleware(['auth', 'verified']);
 require __DIR__.'/auth.php';

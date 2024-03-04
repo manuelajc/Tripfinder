@@ -1,7 +1,6 @@
 <template>
     <Head title="Dashboard" />
 
-
 <AuthenticatedLayout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -21,7 +20,6 @@
 <div class="p-6 text-Black text-center text-4xl font-bold mt-8 sm:mt-12">
     Tus Destinos 
 </div>
-
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-20 mt-14 mb-8">
     <div class="bg-gray-300 h-40 rounded-lg relative ">
@@ -44,8 +42,6 @@
     </div>
 </div>
 
-
-
 <div class="bg-black py-4 text-white text-center mt-20 flex justify-between items-center">
     <div class="ml-40 mt-40 hidden sm:block">
         <!-- Circulo del lado izquierdo -->
@@ -61,7 +57,6 @@
     </div>
 </div>
 </template>
-
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';

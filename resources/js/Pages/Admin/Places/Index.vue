@@ -1,15 +1,8 @@
 <template>
     <AdminMenu>
-        <h1>Crud lugares</h1>
+        <h1 id="Bienvenido">Bienvido </h1>
         <Link :href="route('places.create')">Crear un lugar</Link>
         <table>
-            <thead>
-                <th>id</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Categoria</th>
-                <th>Acciones</th>
-            </thead>
             <tbody>
                 <tr v-for="place in places">
                     <td>{{ place.id }}</td>
@@ -34,6 +27,7 @@
 import AdminMenu from '../../Admin.vue';
 import { Link } from '@inertiajs/vue3';
 
+
 export default {
 
     components: {
@@ -52,3 +46,8 @@ export default {
     },
 }
 </script>
+
+<style>
+
+
+</style>

@@ -30,7 +30,6 @@
                         class="block w-full"
                         autocomplete="description-input"
                     />
-
                     <InputError :message="form.errors.description" class="mt-2" />
                 </div>
 

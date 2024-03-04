@@ -7,7 +7,11 @@ use Inertia\Inertia;
 
 class PlaceController extends Controller
 {
-  
+    public function __construct()
+    {
+        $this->middleware('auth.role')->only(['index', 'create', 'edit']);
+    }
+
     public function index()
     {
         return Inertia::render('admin');

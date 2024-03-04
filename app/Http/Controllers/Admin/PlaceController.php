@@ -35,15 +35,23 @@ class PlaceController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $data=$request->validated();
-        if($request->hasFile('image')){
-            $imagePath=$request->file('image')->store('places', 'public');
-            $data['image']=asset('storage/'. $imagePath);
-        }
-        place::create($data); //con esto se guarda en la base de datos
-        return redirect()->route('places.index')->with('success','categoria creada con exito');
+{
+    $data = $request->validate([
+        'name' => 'required|string',
+        'description' => 'required|string',
+        'category_id' => 'required|integer',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // ajusta según tus necesidades
+    ]);
+
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('places', 'public');
+        $data['image'] = asset('storage/'. $imagePath);
     }
+
+    place::create($data);
+    return redirect()->route('places.index')->with('success', 'Lugar creado con éxito');
+}
+
 
     public function edit(place $place)
     {

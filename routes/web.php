@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PlaceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TranslatorController;
 use App\Models\Place;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -44,12 +45,21 @@ Route::get('/admin', function () {
 
 Route::get('categories/index', [CategoryController::class, 'index'])->name('admin.categories');
 
-/* Route::get('places/index', [PlaceController::class, 'index'])->name('admin.places');
-Route::get('places/create', [PlaceController::class, 'create'])->name('admin.places.create');
-Route::post('places/store', [PlaceController::class, 'store'])->name('admin.places.store');
-Route::get('places/edit/{id}', [PlaceController::class, 'edit'])->name('admin.places.edit');
-Route::put('places/update/{id}', [PlaceController::class, 'update'])->name('admin.places.update');
-Route::delete('places/delet/{id}', [PlaceController::class, 'delete'])->name('admin.places.delete'); */
-
 Route::resource('admin/places', PlaceController::class)->middleware(['auth', 'verified']);
 require __DIR__.'/auth.php';
+
+Route::get('tras', function(){
+    return "ingreso correctamente";
+
+});
+
+Route::middleware(['auth.custom'])->group(function () {
+    // Tus rutas que requieren autenticación
+    Route::get('/admin/places', 'Admin\PlaceController@index')->name('admin.places.index');
+    // ...
+});
+//->middleware('traductor');
+
+//Route::middleware(['translator'])->group(function () {
+  //  Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
+//});

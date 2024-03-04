@@ -21,7 +21,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout class="bg-blue-200">
+    <GuestLayout>
         <Head title="Register" />
 
         <form @submit.prevent="submit">
@@ -84,6 +84,22 @@ const submit = () => {
                 />
 
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
+            </div>
+
+            <div class="mt-4">
+                <InputLabel for="role" value="Tipo de Usuario" />
+
+                <select
+                    id="role"
+                    class="mt-1 block w-full"
+                    v-model="form.role"
+                    required
+                >
+                    <option value="user">Usuario Convencional</option>
+                    <option value="translator">Traductor</option>
+                </select>
+
+                <InputError class="mt-2" :message="form.errors.role" />
             </div>
 
             <div class="flex items-center justify-end mt-4">

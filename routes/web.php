@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PlaceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TranslatorController;
+use App\Models\Place;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -35,4 +39,27 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/admin', function () {
+    return Inertia::render('Admin');
+})->middleware(['auth', 'verified'])->name('admin');
+
+Route::get('categories/index', [CategoryController::class, 'index'])->name('admin.categories');
+
+Route::resource('admin/places', PlaceController::class)->middleware(['auth', 'verified']);
 require __DIR__.'/auth.php';
+
+Route::get('tras', function(){
+    return "ingreso correctamente";
+
+});
+
+Route::middleware(['auth.custom'])->group(function () {
+    // Tus rutas que requieren autenticación
+    Route::get('/admin/places', 'Admin\PlaceController@index')->name('admin.places.index');
+    // ...
+});
+//->middleware('traductor');
+
+//Route::middleware(['translator'])->group(function () {
+  //  Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
+//});

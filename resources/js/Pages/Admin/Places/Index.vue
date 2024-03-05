@@ -6,15 +6,15 @@
             <tbody>
                 <tr v-for="place in places">
                     <td>{{ place.id }}</td>
-                    <td>{{ place.name}}</td>
+                    <td>{{ place.name }}</td>
                     <td>{{ place.description }}</td>
-                    <td>{{ place.category.name }}</td> 
+                    <!-- <td>{{ place.category.name }}</td>  -->
                     <td>
-                        <img :src="place.img" :alt="place.image">
+                        <img :src="place.image" :alt="place.image" width="100px" height="100px">
                     </td>
                     <td>
-                        <Link :href="route('places.edit')">Editar</Link>
-                        <Link :href="route('places.delete')">Eliminar</Link>
+                        <Link :href="route('places.edit', place)">Editar</Link>
+                        <button @click="destroyPlace(place)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
@@ -26,7 +26,7 @@
 
 import AdminMenu from '../../Admin.vue';
 import { Link } from '@inertiajs/vue3';
-
+import { Inertia } from "@inertiajs/inertia";
 
 export default {
 
@@ -39,11 +39,14 @@ export default {
         'places'
     ],
 
-    data() {
-        return {
-
-        };
-    },
+    methods: {
+        destroyPlace(place) {
+            Inertia.delete(route('places.destroy', place), {
+                preserveScroll: true,
+                preserveSate: true,
+            })
+        }
+    }
 }
 </script>
 

@@ -1,7 +1,6 @@
 <template>
     <AdminMenu>
         <h1>Crear un lugar</h1>
-        <Link :href="route('places.create')">Crear un lugar</Link>
         <form @submit.prevent="submit">
             <div class="space-y-6">
                 <div>

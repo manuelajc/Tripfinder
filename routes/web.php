@@ -63,3 +63,5 @@ Route::middleware(['auth.custom'])->group(function () {
 //Route::middleware(['translator'])->group(function () {
   //  Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
 //});
+
+Route::resource('admin/places', PlaceController::class);

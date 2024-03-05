@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Places\StoreRequest;
 use App\Models\place;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -34,7 +35,7 @@ class PlaceController extends Controller
        
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $data=$request->validated();
         if($request->hasFile('image')){

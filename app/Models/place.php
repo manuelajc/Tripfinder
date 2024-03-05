@@ -22,22 +22,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Place extends Model
 {
-    
-    static $rules = [
-		'name' => 'required',
-		'description' => 'required',
-		'user_id' => 'required',
-		'category_id' => 'required',
-    ];
-
-    protected $perPage = 20;
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['name','description','user_id','category_id'];
+    protected $guarded = [];
 
 
     /**

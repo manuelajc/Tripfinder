@@ -58,7 +58,7 @@
 
 
             <div class="mt-8">
-                <button type="submit" class="basic-succes-btn">Create Category</button>
+                <button type="submit" class="btn-basic">Crear lugar</button>
             </div>
         </form>
     </AdminMenu>
@@ -84,10 +84,6 @@ export default {
         TextInput
     },
 
-    props: [
-        'places'
-    ],
-
     data() {
         return {
             form: useForm({
@@ -108,6 +104,12 @@ export default {
                     if (this.form.errors.name) {
                         this.form.reset('name');
                     }
+                    if (this.form.errors.description) {
+                        this.form.reset('description');
+                    }
+                    if (this.form.errors.category_id) {
+                        this.form.reset('category_id');
+                    }
                     if (this.form.errors.logo) {
                         this.form.reset('image');
                     }
@@ -118,3 +120,19 @@ export default {
 }
 
 </script>
+
+<style>
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-basic {
+    padding: 5px 20px;
+    color: #fff;
+    font-weight: 300;
+    background: #899afa;
+}
+
+</style>    

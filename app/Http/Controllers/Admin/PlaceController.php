@@ -53,9 +53,10 @@ class PlaceController extends Controller
     }
 
    
-    public function update(Request $request, place $place)
+    public function update(StoreRequest $request, place $place)
     {
         $data=$request->validated();
+
         if($request->hasFile('image')){
             //eliminar imagen si existe
             if($place->image){

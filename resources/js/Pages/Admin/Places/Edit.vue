@@ -38,7 +38,6 @@
 
                     <TextInput
                         id="category"
-                        ref="categoryInput"
                         v-model="form.category_id"
                         type="text"
                         class="block w-full"
@@ -56,9 +55,8 @@
                 {{ form.image }}
             </div>
 
-
             <div class="mt-8">
-                <button type="submit" class="basic-succes-btn">Create Category</button>
+                <button type="submit" class="btn-basic">Actualizar</button>
             </div>
         </form>
     </AdminMenu>
@@ -85,8 +83,14 @@ export default {
     },
 
     props: [
-        'places'
+        'place'
     ],
+
+    mounted() {
+        this.form.name = this.place.name;
+        this.form.description = this.place.description;
+        this.form.category_id = this.place.category_id;
+    },
 
     data() {
         return {
@@ -95,26 +99,51 @@ export default {
                 description:"",
                 category_id:null,
                 image:null,
+                _method: 'put',
             })
         };
     },
 
     methods:{
         submit(){
-            this.form.post(route('places.store'), {
+            console.log(this.form);
+            this.form.put(route('places.update', this.place), this.form, {
                 preserveScroll: true,
+                forceFormData: true,
                 onSuccess: () => this.form.reset(),
                 onError: () => {
                     if (this.form.errors.name) {
                         this.form.reset('name');
                     }
-                    if (this.form.errors.logo) {
+                    if (this.form.errors.description) {
+                        this.form.reset('description');
+                    }
+                    if (this.form.errors.category_id) {
+                        this.form.reset('category_id');
+                    }
+                    if (this.form.errors.image) {
                         this.form.reset('image');
                     }
                 },
             });
-        },
+        }, 
     },
 }
 
 </script>
+
+<style>
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-basic {
+    padding: 5px 20px;
+    color: #fff;
+    font-weight: 300;
+    background: #899afa;
+}
+
+</style>    

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Places;
+namespace App\Http\Requests\Admin\Lenguage;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -20,12 +20,9 @@ class StoreRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {   
+    {
         return [
-            'name' => 'required', 
-            'description' => 'required', 
-            'category_id' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'name' => 'required'
         ];
     }
 }

@@ -1,27 +1,20 @@
 <template>
     <AdminMenu>
-        <h1 id="Bienvenido">Lugares</h1>
-        <Link :href="route('places.create')" class="btn-basic">Crear un lugar</Link>
+        <h1 id="Bienvenido">Lenguajes</h1>
+        <Link :href="route('lenguages.create')" class="btn-basic">Crear un lenguaje</Link>
         <table>
             <thead>
                 <th>id</th>
                 <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Imagen</th>
                 <th>Acciones</th>
             </thead>
             <tbody>
-                <tr v-for="place in places">
-                    <td>{{ place.id }}</td>
-                    <td>{{ place.name }}</td>
-                    <td>{{ place.description }}</td>
-                    <!-- <td>{{ place.category.name }}</td>  -->
+                <tr v-for="lenguage in lenguages">
+                    <td>{{ lenguage.id }}</td>
+                    <td>{{ lenguage.name }}</td>
                     <td>
-                        <img :src="place.image" :alt="place.image" width="100px" height="100px">
-                    </td>
-                    <td>
-                        <Link :href="route('places.edit', place)" class="edit">Editar</Link>
-                        <button @click="destroyPlace(place)" class="delete">Eliminar</button>
+                        <Link :href="route('lenguages.edit', lenguage)" class="edit">Editar</Link>
+                        <button @click="destroyLenguage(lenguage)" class="delete">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
@@ -43,12 +36,12 @@ export default {
     },
 
     props: [
-        'places'
+        'lenguages'
     ],
 
     methods: {
-        destroyPlace(place) {
-            Inertia.delete(route('places.destroy', place), {
+        destroyLenguage(lenguage) {
+            Inertia.delete(route('lenguages.destroy', lenguage), {
                 preserveScroll: true,
                 preserveState: true,
             })

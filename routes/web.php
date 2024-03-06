@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\LenguageController;
 use App\Http\Controllers\Admin\PlaceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TranslatorController;
@@ -65,3 +66,4 @@ Route::middleware(['auth.custom'])->group(function () {
 //});
 
 Route::resource('admin/places', PlaceController::class);
+Route::resource('admin/lenguages', LenguageController::class);

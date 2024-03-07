@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\LenguageController;
 use App\Http\Controllers\Admin\PlaceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RuralController;
@@ -71,3 +72,4 @@ Route::resource('admin/places', PlaceController::class);
 Route::get('/urban', [UrbanController::class, 'mostrar'])->name('Urban');
 
 Route::get('/rural', [RuralController::class, 'mostrar'])->name('Rural');
+Route::resource('admin/lenguages', LenguageController::class);

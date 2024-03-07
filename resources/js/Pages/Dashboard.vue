@@ -8,8 +8,8 @@
                 <div class="p-6 text-white text-center text-5xl font-bold">Busca tus siguientes vacaciones!</div>
                 <!-- Botones -->
                 <div class="flex justify-center mt-6">
-                    <button @click="mostrarUrbanos" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mr-4">Urbanos</button>
-                    <button @click="mostrarRurales" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Rurales</button>
+                    <Link :href="route('Urban')" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mr-4">Urbanos</Link>
+                    <Link :href="route('Rural')"class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Rurales</Link>
                 </div>
             </div>
         </div>
@@ -42,18 +42,18 @@
     </div>
 </div>
 
-<div class="bg-black py-4 text-white text-center mt-20 flex justify-between items-center">
-    <div class="ml-40 mt-40 hidden sm:block">
+<div class="bg-indigo-300 py-1 text-center mt-20 flex justify-between items-center">
+    <div class="ml-40 mt-20 hidden sm:block">
         <!-- Circulo del lado izquierdo -->
-        <div class="rounded-full bg-white w-40 h-40"></div>
+        <div class="rounded-full bg-white w-20 h-20"></div>
     </div>
     <div class="hidden sm:block">
         <!-- Circulo del medio  -->
-        <div class="rounded-full bg-white w-40 h-40"></div>
+        <div class="rounded-full bg-white w-20 h-20"></div>
     </div>
-    <div class="mr-40 mt-40 hidden sm:block">
+    <div class="mr-40 mt-20 hidden sm:block">
         <!-- Circulo del lado derecho -->
-        <div class="rounded-full bg-white w-40 h-40"></div>
+        <div class="rounded-full bg-white w-20 h-20"></div>
     </div>
 </div>
 </template>
@@ -61,13 +61,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
 
-const mostrarUrbanos = () => {
-// Lógica para mostrar destinos de los Urbanos
-};
-
-const mostrarRurales = () => {
-// Lógica para mostrar destinos de los Rurales
-};
-</script
-
+</script>

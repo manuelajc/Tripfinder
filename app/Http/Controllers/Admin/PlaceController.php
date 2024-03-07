@@ -68,7 +68,6 @@ class PlaceController extends Controller
         }
         $place->update($data); //esto se actualiza en la base de datos
         return redirect()->route('places.index')->with('success','categoria editada con exito');
-        
     }
 
     public function destroy(place $place)

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('description');
             $table->string('tarifa');
+            $table->integer('candidates')->default(0);
             $table->unsignedBigInteger('place_id');
             $table->unsignedBigInteger('lenguage_id');
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');

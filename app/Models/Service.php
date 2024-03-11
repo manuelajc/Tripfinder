@@ -10,4 +10,12 @@ class Service extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function lenguage() {
+        return $this->belongsTo('App\Models\Lenguage');
+    }
+
+    public function place() {
+        return $this->belongsTo('App\Models\place');
+    }
 }

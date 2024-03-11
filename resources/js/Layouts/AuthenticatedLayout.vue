@@ -40,6 +40,11 @@ const showingNavigationDropdown = ref(false);
                                       Admin  
                                     </div>
                                 </NavLink>
+                                <NavLink :href="route('vista.translator')" :active="route().current('vista.translator')">
+                                    <div class="text-white">
+                                      Mis servicios
+                                    </div>
+                                </NavLink>
                              
                             </div>
                         </div>

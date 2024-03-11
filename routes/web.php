@@ -65,9 +65,9 @@ Route::middleware(['auth.custom'])->group(function () {
 });
 //->middleware('traductor');
 
-//Route::middleware(['translator'])->group(function () {
-  //  Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
-//});
+
+Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
+
 
 Route::resource('admin/places', PlaceController::class);
 
@@ -76,3 +76,4 @@ Route::get('/urban', [GeneralController::class, 'mostrarUrban'])->name('Urban');
 Route::get('/rural', [GeneralController::class, 'mostrarRural'])->name('Rural');
 Route::resource('admin/lenguages', LenguageController::class);
 Route::resource('/traductor/services', ServiceController::class);
+

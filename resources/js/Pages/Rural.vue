@@ -1,42 +1,28 @@
 <template>
     <Head title="Rural" />
 
-
     <AuthenticatedLayout>
-    <div class="py-12">
-        <div class="texto">
-            <h1>Rurales</h1>
-            <p>Aquí podras ver algunos tours en las zonas rurales <br> de nuestra area metropolitana</p>
-        </div>
-        <div class="form">
-            <div class="colum">
-                <img href="#"/>
-                <a href="#">holi</a>
+        <div class="py-12">
+            <div class="texto">
+                <h1>Rurales</h1>
+                <p>Aquí podrás ver algunos tours en las zonas rurales de nuestra área metropolitana</p>
             </div>
-            <div class="colum">
-                <img href="#">
-                <a href="#">holi</a>
-            </div>
-            <div class="colum">
-                <img href="#">
-                <a href="#">holi</a>
-            </div>
-            <div class="colum">
-                <img href="#">
-                <a href="#">holi</a>
+            <div class="form">
+                <div class="colum" v-for="lugar in lugaresRurales" :key="lugar.id">
+                    <img :src="lugar.image" :alt="'Imagen de ' + lugar.name">
+                    <a :href="'/lugares/' + lugar.id">{{ lugar.name }}</a>
+                </div>
             </div>
         </div>
-    </div>
-
-    
-</AuthenticatedLayout>
-
-
+    </AuthenticatedLayout>
 </template>
+
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, usePage } from '@inertiajs/vue3';
+
+const { lugaresRurales } = usePage().props;
 </script>
 
 <style>
@@ -56,7 +42,7 @@ import { Head } from '@inertiajs/vue3';
     }
     p{
         margin-left: 5px;
-        font-size: 27px;
+        font-size: 20px;
         color:white;
         text-align: center;
     }
@@ -79,7 +65,6 @@ import { Head } from '@inertiajs/vue3';
         align-items: center;
     }
     img{
-        border: 1px solid black;
         margin: 15px;
     }
     .colum img{
@@ -89,7 +74,7 @@ import { Head } from '@inertiajs/vue3';
     }
     .colum a{
         margin: 55px;
-        font-size: 22px;
+        font-size: 18px;
     }
 
     @media (max-width: 768px) {

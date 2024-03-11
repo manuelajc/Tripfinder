@@ -3,31 +3,19 @@
 
 
     <AuthenticatedLayout>
+
     <div class="py-12">
         <div class="texto">
             <h1>Urbanos</h1>
             <p>Aquí encontrarás lugares donde disfrutar <br> actividades únicas o disfrutando del paisaje urbano.</p>
         </div>
         <div class="form">
-            <div class="colum">
-                <img href="#"/>
-                <a href="#">holi</a>
-            </div>
-            <div class="colum">
-                <img href="#">
-                <a href="#">holi</a>
-            </div>
-            <div class="colum">
-                <img href="#">
-                <a href="#">holi</a>
-            </div>
-            <div class="colum">
-                <img href="#">
-                <a href="#">holi</a>
+                <div class="colum" v-for="lugar in lugaresUrbanos" :key="lugar.id">
+                    <img :src="lugar.image" :alt="'Imagen de ' + lugar.name">
+                    <a :href="'/lugares/' + lugar.id">{{ lugar.name }}</a>
+                </div>
             </div>
         </div>
-    </div>
-
     
 </AuthenticatedLayout>
 
@@ -36,7 +24,9 @@
 
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, usePage } from '@inertiajs/vue3';
+
+const { lugaresUrbanos } = usePage().props;
 </script>
 
 <style>
@@ -55,9 +45,9 @@ import { Head } from '@inertiajs/vue3';
         text-align: center;
     }
     p{
-        margin-left: 5px;
+        margin-left: 20px;
         font-size: 27px;
-        color:white;
+        color: white;
         text-align: center;
     }
     .form{
@@ -79,7 +69,6 @@ import { Head } from '@inertiajs/vue3';
         align-items: center;
     }
     img{
-        border: 1px solid black;
         margin: 15px;
     }
     .colum img{
@@ -89,7 +78,7 @@ import { Head } from '@inertiajs/vue3';
     }
     .colum a{
         margin: 55px;
-        font-size: 22px;
+        font-size: 18px;
     }
 
     @media (max-width: 768px) {

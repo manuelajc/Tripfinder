@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<div class="py-1 text-center mt-20 flex justify-between items-center">
+<div class="footer py-1 text-center mt-20 flex justify-between items-center">
     
     <div class="img">
         <Link>
@@ -69,10 +69,8 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 </script>
 
 <style>
-    .py-1{
-        height: 80px;
+    .footer{
         background-color: #6aa9e9;
-        display: flex;
     }
     .logo{
         border: 1px solid black;

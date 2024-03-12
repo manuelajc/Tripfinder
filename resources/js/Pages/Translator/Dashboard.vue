@@ -2,42 +2,43 @@
     <Head title="Admin"/>
 
     <AuthenticatedLayout>
-        <div>
-            <h1>Dashboard de traductor</h1>
-            <hr>
-            <section>
-                <div>
-                    <h3>Mis servicios</h3>
-                    <Link :href="route('services.create')" class="btn-basic">Crear un servicio</Link>
-                </div>
-                <table>
-                    <thead>
-                        <th>id</th>
-                        <th>Descripción</th>
-                        <th>Lugar</th>
-                        <th>Idioma</th>
-                        <th>Tarifa</th>
-                        <th>Candidatos</th>
-                        <th>Acciones</th>
-                    </thead>
-                    <tbody>
-                        <tr v-for="service in services">
-                            <td>{{ service.id }}</td>
-                            <td>{{ service.description }}</td>
-                            <td>{{ service.lenguage.name }}</td>
-                            <td>{{ service.place.name }}</td>
-                            <td>{{ service.tarifa }}</td>
-                            <td>{{ service.candidates }}</td>
-                            <td>
-                                <Link :href="route('services.edit', service)" class="edit">Editar</Link>
-                                <button @click="destroyLenguage(service)" class="delete">Eliminar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </div>
     </AuthenticatedLayout>
+    <div>
+        <h1>Dashboard de traductor</h1>
+        
+        <section>
+            <div>
+                <h3>Mis servicios</h3>
+                <Link :href="route('services.create')" class="btn-basic">Crear un servicio</Link>
+            </div>
+            <table>
+                <thead>
+                    <th>id</th>
+                    <th>Descripción</th>
+                    <th>Lugar</th>
+                    <th>Idioma</th>
+                    <th>Tarifa</th>
+                    <th>Candidatos</th>
+                    <th>Acciones</th>
+                </thead>
+                <tbody>
+                    <tr v-for="service in services">
+                        <td>{{ service.id }}</td>
+                        <td>{{ service.description }}</td>
+                        <td>{{ service.lenguage.name }}</td>
+                        <td>{{ service.place.name }}</td>
+                        <td>{{ service.tarifa }}</td>
+                        <td>{{ service.candidates }}</td>
+                        <td>
+                            <Link :href="route('services.edit', service)" class="edit">Editar</Link>
+                            <button @click="destroyLenguage(service)" class="delete">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
 </template>
 
 <script>
@@ -65,19 +66,26 @@ export default {
 h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    margin-left: 50px;
+}
+
+h3{
+    margin-left: 50px;
+    font-size: 20px;
 }
 
 .btn-basic {
-    padding: 5px 20px;
+    padding: 7px 22px;
     color: #fff;
-    font-weight: 300;
-    background: #899afa;
+    background: #607ec9;
+    border-radius: 5px;
+    margin-left: 50px;
 }
 
 table {
     border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
+    width: 80%;
+    margin: 50px;
 }
 
 th, td {
@@ -87,7 +95,9 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;  
+    background-color: #607ec9; 
+    color: #fff;
+    text-align: center;
 }
 
 .edit {

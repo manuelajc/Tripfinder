@@ -78,7 +78,7 @@ const { lugaresUrbanos } = usePage().props;
     }
     .colum a{
         margin: 55px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     @media (max-width: 768px) {

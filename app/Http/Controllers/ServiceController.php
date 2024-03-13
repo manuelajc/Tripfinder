@@ -40,6 +40,7 @@ class ServiceController extends Controller
         $service->candidates = 0;
         $service->place_id = $data['lugar'];
         $service->lenguage_id = $data['idioma'];
+        $service->traductor_id = auth()->user()->id;
 
         $service->save();
 

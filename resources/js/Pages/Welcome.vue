@@ -84,9 +84,6 @@ defineProps({
 </template>
 
 <style>
-.bg-dots-darker {
-    background-image: url("../Components/images/27e2902ad30a8ae51ab8d0e3f7d33962.svg");
-}
 
 .minav span{
     color: #35D7FF;

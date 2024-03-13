@@ -10,64 +10,112 @@
             <Link :href="route('Rural')"class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Rurales</Link>
         </div>
     </div>
+    <!--Aca se van agregar los lugares para los tours-->
+    <div class="p-6 text-Black text-center text-4xl font-bold mt-8 sm:mt-12">
+        Tus Destinos 
+    </div>
+
+    <div class="grid-lugares">
+        
+        <div v-for="lugar in lugares">
+            <Link :href="route('place.show.view', lugar)">
+                <img :src="lugar.image" :alt="lugar.name">
+            </Link>
+            <p class="">{{ lugar.name }}</p>
+        </div>
+    </div>
+
+    <div class="footer py-1 text-center mt-20 flex justify-between items-center">
+        
+        <div class="img">
+            <Link>
+                <ApplicationLogo class="logo w-20 h-20 fill-current text-gray-500" />
+            </Link>
+        </div>
+
+        <div class="we">
+            <p>Viaja en una ciudad que florece</p>
+        </div>
+
+        <div class="icons">
+            <h2>holi</h2>
+            <h2>hola</h2>
+        </div>
+    </div>
+
 </AuthenticatedLayout>
-
-<!--Aca se van agregar los lugares para los tours-->
-<div class="p-6 text-Black text-center text-4xl font-bold mt-8 sm:mt-12">
-    Tus Destinos 
-</div>
-
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-20 mt-14 mb-8">
-    <div class="bg-gray-300 h-40 rounded-lg relative ">
-        <p class="absolute bottom-2 left-2 text-left text-black">Parque explora 1</p>
-    </div>
-    <div class="bg-gray-300 h-40 rounded-lg relative ">
-        <p class="absolute bottom-2 left-2 text-left text-black">Parque explora 2</p>
-    </div>
-    <div class="bg-gray-300 h-40 rounded-lg relative ">
-        <p class="absolute bottom-2 left-2 text-left text-black ">Parque explora 3</p>
-    </div>
-    <div class="bg-gray-300 h-40 rounded-lg relative ">
-        <p class="absolute bottom-2 left-2 text-left text-black">Parque explora 4</p>
-    </div>
-    <div class="bg-gray-300 h-40 rounded-lg relative ">
-        <p class="absolute bottom-2 left-2 text-left text-black">Parque explora 5</p>
-    </div>
-    <div class="bg-gray-300 h-40 rounded-lg relative ">
-        <p class="absolute bottom-2 left-2 text-left text-black">Parque explora 6</p>
-    </div>
-</div>
-
-<div class="footer py-1 text-center mt-20 flex justify-between items-center">
-    
-    <div class="img">
-        <Link>
-            <ApplicationLogo class="logo w-20 h-20 fill-current text-gray-500" />
-        </Link>
-    </div>
-
-    <div class="we">
-        <p>Viaja en una ciudad que florece</p>
-    </div>
-
-    <div class="icons">
-        <h2>holi</h2>
-        <h2>hola</h2>
-    </div>
-</div>
-
 
 </template>
 
-<script setup>
+<script>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { Link } from '@inertiajs/vue3';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 
+export default {
+
+    components: {
+        AuthenticatedLayout,
+        Head,
+        Link,
+        ApplicationLogo,
+    },
+
+    props: [
+        'lugares'
+    ],
+
+}
+
 </script>
 
-<style>
+<style >
+
+    .grid-lugares {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 2rem;
+        grid-gap: 1rem;
+    }
+
+    .grid-lugares div {
+        height: 300px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background: #2c2c2c;
+    }
+
+    .grid-lugares div p {
+        z-index: 20;
+        color: #6aa9e9;
+        font-size: 2rem;
+        text-transform: uppercase;
+        display: none;
+        transition: .3s;
+    }
+
+    .grid-lugares div:hover img{
+        opacity: .5;
+    }
+
+    .grid-lugares div:hover p {
+        display: flex;
+    }
+
+    .grid-lugares img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .3s;
+    }
+
     .footer{
         background-color: #6aa9e9;
     }

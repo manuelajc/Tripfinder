@@ -60,8 +60,12 @@ h1 {
 .btn-basic {
     padding: 5px 20px;
     color: #fff;
-    font-weight: 300;
     background: #899afa;
+    border-radius: 5px;
+}
+
+.btn-basic:hover{
+    background: #7185f8;
 }
 
 table {
@@ -77,7 +81,9 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;  
+    background-color: #607ec9; 
+    color: #fff; 
+    text-align: center;
 }
 
 .edit {

@@ -82,6 +82,10 @@ h3{
     margin-left: 50px;
 }
 
+.btn-basic:hover{
+    background: #7185f8;
+}
+
 table {
     border-collapse: collapse;
     width: 80%;

@@ -47,7 +47,6 @@
     </div>
 
     <div class="we">
-        <h3>Sobre Nosotros</h3>
         <p>Viaja en una ciudad que florece</p>
     </div>
 
@@ -78,7 +77,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
     }
     .we{
         border: 1px solid black;
-        font-size: 16px;
+        font-size: 20px;
         color: #ffff;
         margin-right: 10px;
     }
@@ -89,5 +88,20 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
     }
     .icons h2{
         margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .we, .icons{
+            display: none;
+        }
+        .footer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo{
+            margin: 0;
+            flex-grow: 1;
+        }
     }
 </style>

@@ -15,8 +15,8 @@
                 <thead>
                     <th>id</th>
                     <th>Descripción</th>
-                    <th>Lugar</th>
                     <th>Idioma</th>
+                    <th>Lugar</th>
                     <th>Tarifa</th>
                     <th>Candidatos</th>
                     <th>Acciones</th>

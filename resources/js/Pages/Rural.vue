@@ -36,14 +36,14 @@ const { lugaresRurales } = usePage().props;
         margin-right:90px;
     }
     .texto h1{
-        color:white;
+        color:black;
         font-size:50px;
         text-align: center;
     }
     p{
         margin-left: 5px;
         font-size: 20px;
-        color:white;
+        color:black;
         text-align: center;
     }
     .form{
@@ -74,7 +74,7 @@ const { lugaresRurales } = usePage().props;
     }
     .colum a{
         margin: 55px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     @media (max-width: 768px) {

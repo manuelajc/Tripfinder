@@ -18,8 +18,10 @@ return new class extends Migration
             $table->integer('candidates')->default(0);
             $table->unsignedBigInteger('place_id');
             $table->unsignedBigInteger('lenguage_id');
+            $table->unsignedBigInteger('traductor_id');
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
             $table->foreign('lenguage_id')->references('id')->on('lenguages')->onDelete('cascade');
+            $table->foreign('   ')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

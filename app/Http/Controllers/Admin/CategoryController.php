@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         $categories = category::all();
 
-        return Inertia::render('Admin/Category', [
+        return Inertia::render('Admin/Category/Index', [
             'categories' => $categories,
         ]);
 

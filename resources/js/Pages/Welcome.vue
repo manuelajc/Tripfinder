@@ -122,7 +122,7 @@ defineProps({
 }
 
 .iniciar{
-    margin: 0 10px;
+    margin: 0 30px;
 }
 
 @media (prefers-color-scheme: dark) {

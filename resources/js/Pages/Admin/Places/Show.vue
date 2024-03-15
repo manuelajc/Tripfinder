@@ -116,7 +116,7 @@ export default {
 }
 
 .servicio-card {
-    background: rgba(94, 220, 255, 0.358);
+    background: rgba(172, 183, 191, 0.358);
     border-radius: 5px;
     padding: 1rem;
     display: flex;
@@ -126,9 +126,10 @@ export default {
 
 .regis {
     padding: 10px 20px;
-    background: rgb(104, 104, 252);
+    background: #6aa9e9;
     color: #fff;
     width: fit-content;
+    border-radius: 8px;
 }
 
 </style>

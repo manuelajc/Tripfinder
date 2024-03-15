@@ -13,7 +13,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="bg-dots-darker">
-            <nav class="border-b border-gray-100 bg-blue-300 bg-opacity-20">
+            <nav class="border-b border-gray-100 bg-blue-400">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">

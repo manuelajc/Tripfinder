@@ -24,7 +24,7 @@ defineProps({
     
     <Head title="Welcome" />
 
-    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-cover bg-dots-darker wenas">
+    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen wenas">
         <div class="minav">
                 <div class="dark:text-white sm:fixed sm:top-0 sm:left-0 p-6 text-end">
                 <p><span>T</span>RIP<span>F</span>INDE<span>R</span></p>
@@ -64,14 +64,14 @@ defineProps({
                     <Link
                         :href="route('login')"
                         class="iniciar"
-                        >Iniciar sesión</Link
+                        ><a>Iniciar sesión</a></Link
                     >
 
                     <Link
                         v-if="canRegister"
                         :href="route('register')"
                         class="registrar"
-                        >Registrarse</Link
+                        ><a>Registrarse</a></Link
                     >
                    </template> 
             </div>
@@ -85,6 +85,10 @@ defineProps({
 
 <style>
 
+.wenas{
+    background-image: url(../Components/images/27e2902ad30a8ae51ab8d0e3f7d33962.svg);
+}
+
 .minav span{
     color: #35D7FF;
 }
@@ -92,6 +96,7 @@ defineProps({
 .welcome{
     color: white;
     transform: translate(-12px, -150px);
+    margin-bottom: 50px;
 }
 
 .welcome h2{
@@ -113,14 +118,30 @@ defineProps({
 }
 
 .botoncitos{
-    font-size: 20px;
+    font-size: 17px;
     color: white;
-    margin-top: 15px;
 }
 
 .iniciar{
-    margin: 0 10px;
+    margin: 0 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px 20px;
 }
+.registrar{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.iniciar a{
+    margin: 20px;
+}
+
+.registrar a{
+    margin: 20px;
+}
+
 
 @media (prefers-color-scheme: dark) {
     .dark\:bg-dots-lighter {

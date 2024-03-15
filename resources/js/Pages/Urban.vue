@@ -4,7 +4,7 @@
 
     <AuthenticatedLayout>
 
-    <div class="py-12">
+    <div class="holi py-12">
         <div class="texto">
             <h1>Urbanos</h1>
             <p>Aquí encontrarás lugares donde disfrutar <br> actividades únicas o disfrutando del paisaje urbano.</p>
@@ -30,7 +30,8 @@ const { lugaresUrbanos } = usePage().props;
 </script>
 
 <style>
-    .py-12{
+
+  .py-12{
         display:flex;
         align-items: center;
         flex-wrap: wrap;
@@ -40,18 +41,18 @@ const { lugaresUrbanos } = usePage().props;
         margin-right:90px;
     }
     .texto h1{
-        color:white;
+        color:black;
         font-size:50px;
         text-align: center;
     }
     p{
         margin-left: 20px;
         font-size: 27px;
-        color: white;
+        color: black;
         text-align: center;
     }
     .form{
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(154, 219, 254, 0.5);
         width: 350px;
         height: 350px;
         border-radius: 10px;

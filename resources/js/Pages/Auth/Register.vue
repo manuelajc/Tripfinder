@@ -96,7 +96,7 @@ const submit = () => {
                     v-model="form.role"
                     required
                 >
-                    <option value="user">Usuario Convencional</option>
+                    <option value="user">Turista</option>
                     <option value="translator">Traductor</option>
                 </select>
 

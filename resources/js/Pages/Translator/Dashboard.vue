@@ -4,11 +4,9 @@
     <AuthenticatedLayout>
     </AuthenticatedLayout>
     <div>
-        <h1>Dashboard de traductor</h1>
-        
+        <h1>Mis Servicios</h1>
         <section>
             <div>
-                <h3>Mis servicios</h3>
                 <Link :href="route('services.create')" class="btn-basic">Crear un servicio</Link>
             </div>
             <table>

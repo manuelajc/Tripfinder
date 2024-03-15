@@ -47,7 +47,7 @@ const { lugaresRurales } = usePage().props;
         text-align: center;
     }
     .form{
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(154, 219, 254, 0.5);
         width: 350px;
         height: 350px;
         border-radius: 10px;

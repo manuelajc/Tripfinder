@@ -58,6 +58,6 @@ class LenguageController extends Controller
     public function destroy(Lenguage $lenguage)
     {
         $lenguage->delete();
-        return redirect()->route('lenguages.index')->with('success','Lenguaje eliminada con exito');
+        return Inertia::location(route('lenguages.index'));
     }
 }

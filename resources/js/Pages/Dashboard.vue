@@ -2,12 +2,12 @@
     <Head title="Dashboard" />
 
 <AuthenticatedLayout>
-    <div class="py-12">
+    <div class="ini py-12">
         <div class="p-6 text-white text-center text-5xl font-bold">Busca tus siguientes vacaciones!</div>
         <!-- Botones -->
         <div class="flex justify-center mt-6">
-            <Link :href="route('Urban')" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mr-4">Urbanos</Link>
-            <Link :href="route('Rural')"class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Rurales</Link>
+            <Link :href="route('Urban')" class="bg-blue-400 hover:bg-blue-200 hover:text-black text-white font-bold py-2 px-4 rounded mr-4">Urbanos</Link>
+            <Link :href="route('Rural')"class="bg-blue-400 hover:bg-blue-200 hover:text-black text-white font-bold py-2 px-4 rounded">Rurales</Link>
         </div>
     </div>
     <!--Aca se van agregar los lugares para los tours-->
@@ -38,8 +38,8 @@
         </div>
 
         <div class="icons">
-            <h2>holi</h2>
-            <h2>hola</h2>
+            <h2>F</h2>
+            <h2>W</h2>
         </div>
     </div>
 
@@ -72,6 +72,10 @@ export default {
 
 <style >
 
+.ini{
+    background-image: url(../Components/images/27e2902ad30a8ae51ab8d0e3f7d33962.svg);
+}
+
     .grid-lugares {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -87,11 +91,12 @@ export default {
         align-items: center;
         position: relative;
         background: #2c2c2c;
+        border-radius: 5px;
     }
 
     .grid-lugares div p {
         z-index: 20;
-        color: #6aa9e9;
+        color: #ffffff;
         font-size: 2rem;
         text-transform: uppercase;
         display: none;
@@ -120,18 +125,16 @@ export default {
         background-color: #6aa9e9;
     }
     .logo{
-        border: 1px solid black;
         margin-left: 100px;
     }
     .we{
-        border: 1px solid black;
         font-size: 20px;
         color: #ffff;
         margin-right: 10px;
     }
     .icons{
-        border: 1px solid black;
         margin-right: 100px;
+        color: white;
         display: flex;
     }
     .icons h2{
@@ -139,6 +142,9 @@ export default {
     }
 
     @media (max-width: 768px) {
+        .grid-lugares{
+            display: block;
+        }
         .we, .icons{
             display: none;
         }

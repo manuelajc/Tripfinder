@@ -76,26 +76,51 @@ const { lugaresUrbanos } = usePage().props;
         width: 80px;
         height: 50px;
         border-radius: 5px;
+        object-fit: cover;
     }
     .colum a{
+        widows: 100%;
+        font-size: 14px;
         margin: 55px;
-        font-size: 16px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
     .form {
-      margin-top: 20px; /* esto ajusra lamargen superior del formulario */
-      width: auto; /* esto ajusta el ancho del contenido */
+        width: 300px;
+        margin-right: 20px;
+        margin-top: 40px;
     }
+
+    .colum {
+        width: 240px;
+    }
+
+    .colum a {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .colum img {
+        width: 50px;
+    }
+
     .py-12 {
-      justify-content: center; /* Centra los elementos en pantallas pequeñas */
+        justify-content: center;
     }
+
     .texto {
-      text-align: center; /* esto centra el texto en pantallas pequeñas */
-      margin-left: 100px;
+        text-align: center;
+        margin-left: 30px;
+        margin-right: 30px;
     }
-    p{
-      font-size: 22px; /* esto es para ajustar el tamaño de la letra */
+
+    .texto h1 {
+        margin-left: 0;
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 20px;
     }
 }
 </style>

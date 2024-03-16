@@ -17,9 +17,9 @@
 
     <div class="grid-lugares">
         
-        <div v-for="lugar in lugares">
+        <div class="cont-image" v-for="lugar in lugares">
             <Link :href="route('place.show.view', lugar)">
-                <img :src="lugar.image" :alt="lugar.name">
+                <img class="image" :src="lugar.image" :alt="lugar.name">
             </Link>
             <p class="">{{ lugar.name }}</p>
         </div>
@@ -90,8 +90,10 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
-        background: #2c2c2c;
-        border-radius: 5px;
+    }
+
+    .image{
+        border-radius: 8px;
     }
 
     .grid-lugares div p {
@@ -143,7 +145,14 @@ export default {
 
     @media (max-width: 768px) {
         .grid-lugares{
-            display: block;
+            display: block;   
+        }
+        .cont-image{
+            height: 350px !important;
+            margin: 10px;
+        }
+        .grid-lugares link{
+           border-radius: 50%; 
         }
         .we, .icons{
             display: none;

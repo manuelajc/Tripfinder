@@ -14,13 +14,13 @@ class GeneralController extends Controller
 
     public function mostrarRural()
     {
-    $lugaresRurales = Place::all();
-    return Inertia::render('Rural', ['lugaresRurales' => $lugaresRurales]);
+        $lugaresRurales = Place::where('category_id', 2)->get();
+        return Inertia::render('Rural', ['lugaresRurales' => $lugaresRurales]);
     }
 
     public function mostrarUrban()
     {
-        $lugaresUrbanos = Place::all();
+        $lugaresUrbanos = Place::where('category_id', 1)->get();
         return Inertia::render('Urban', ['lugaresUrbanos' => $lugaresUrbanos]);
     }
 

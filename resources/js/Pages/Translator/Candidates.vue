@@ -4,39 +4,19 @@
     <AuthenticatedLayout>
     </AuthenticatedLayout>
     <div>
-        <h1>Mis Servicios</h1>
+        <h1>Candidatos subscriptos al servicio</h1>
         <section>
-            <div>
-                <Link :href="route('services.create')" class="btn-basic">Crear un servicio</Link>
-            </div>
             <table>
                 <thead>
                     <th>id</th>
-                    <th>Descripción</th>
-                    <th>Idioma</th>
-                    <th>Lugar</th>
-                    <th>Tarifa</th>
-                    <th>Candidatos</th>
-                    <th>Acciones</th>
+                    <th>Candidato</th>
+                    <th>Email</th>
                 </thead>
                 <tbody>
-                    <tr v-for="service in services">
-
-                        <td>{{ service.id }}</td>
-                        <td>{{ service.description }}</td>
-                        <td>{{ service.lenguage.name }}</td>
-                        <td>{{ service.place.name }}</td>
-                        <td>{{ service.tarifa }}</td>
-                        <td>
-                            {{ service.candidates }}
-                            <Link :href="route('candidates.show', service)">
-                                ver candidatos
-                            </Link>
-                        </td>
-                        <td>
-                            <Link :href="route('services.edit', service)" class="edit">Editar</Link>
-                            <button @click="destroyLenguage(service)" class="delete">Eliminar</button>
-                        </td>
+                    <tr v-for="candidate in service.candidates">
+                        <td>{{ candidate.id }}</td>
+                        <td>{{ candidate.name }}</td>
+                        <td>{{ candidate.email }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -59,7 +39,7 @@ export default {
     },
 
     props: {
-        services: Object,
+        service: Object,
     }
 
 }

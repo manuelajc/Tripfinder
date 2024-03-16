@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('traductor_id');
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
             $table->foreign('lenguage_id')->references('id')->on('lenguages')->onDelete('cascade');
-            $table->foreign('   ')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('traductor_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

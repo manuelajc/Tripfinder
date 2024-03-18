@@ -4,7 +4,7 @@
     <AuthenticatedLayout>
     </AuthenticatedLayout>
     <div>
-        <h1>Dashboard de traductor</h1>
+        <h1>Traductor</h1>
         
         <section>
             <div>
@@ -31,7 +31,7 @@
                         <td>{{ service.candidates }}</td>
                         <td>
                             <Link :href="route('services.edit', service)" class="edit">Editar</Link>
-                            <button @click="destroyLenguage(service)" class="delete">Eliminar</button>
+                            <button @click="destroyService(service)" class="delete">Eliminar</button>
                         </td>
                     </tr>
                 </tbody>
@@ -54,10 +54,18 @@ export default {
         Link,
     },
 
-    props: {
-        services: Object,
-    }
+    props: [
+        'services'
+    ],
 
+    methods: {
+        destroyService(service) {
+            Inertia.delete(route('services.destroy', service), {
+                preserveScroll: true,
+                preserveState: true,
+            })
+        }
+    }
 }
 </script>
 

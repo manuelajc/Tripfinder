@@ -70,6 +70,7 @@ Route::middleware(['auth.custom'])->group(function () {
 Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
 
 
+
 Route::resource('admin/places', PlaceController::class);
 
 Route::get('/urban', [GeneralController::class, 'mostrarUrban'])->name('Urban');
@@ -78,4 +79,8 @@ Route::get('/rural', [GeneralController::class, 'mostrarRural'])->name('Rural');
 Route::post('/register/{service}', [GeneralController::class, 'registerToService'])->name('register.service');
 Route::resource('admin/lenguages', LenguageController::class);
 Route::resource('/traductor/services', ServiceController::class);
+
+Route::get('/translator/{service}', [ServiceController::class, 'edit'])->name('services.Edit');
+Route::patch('/translator', [ServiceController::class, 'update'])->name('services.update');
+Route::delete('/translator/{service}', [ServiceController::class, 'destroy'])->name('services.destroy');
 

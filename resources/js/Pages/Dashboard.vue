@@ -1,9 +1,10 @@
 <template>
+   
     <Head title="Dashboard" />
 
 <AuthenticatedLayout>
     <div class="py-12">
-        <div class="p-6 text-white text-center text-5xl font-bold">Busca tus siguientes vacaciones!</div>
+        <div class="p-6 text-black text-center text-5xl font-bold">Busca tus siguientes vacaciones!</div>
         <!-- Botones -->
         <div class="flex justify-center mt-6">
             <Link :href="route('Urban')" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mr-4">Urbanos</Link>

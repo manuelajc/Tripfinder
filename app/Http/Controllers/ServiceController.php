@@ -58,24 +58,27 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Service $service)
     {
-        //
+        return Inertia::render('Translator/Edit', compact('service'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Service $service)
     {
-        //
+        $data=$request->validated();
+        $service->update($data); //esto se actualiza en la base de datos
+        return redirect()->route('Translator/Dashboard')->with('success','Servicio editado con exito');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->route('Translator/Dashboard')->with('success','se elimino correctamente');
     }
 }

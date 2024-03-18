@@ -1,4 +1,4 @@
-<template>
+><template>
     <Head title="place"/>
 
     <AuthenticatedLayout>
@@ -21,7 +21,7 @@
                         <h3>{{ service.lenguage.name }}</h3>
                         <p>{{ service.description }}</p>
                         <span>${{ service.tarifa }}</span>
-                        <button @click="register(service)" class="regis">Registrarme</button>
+                        <button @click="register(service)" class="regis">Solicitar</button>
                     </div>
                 </div>
             </section>

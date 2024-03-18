@@ -11,8 +11,10 @@
         </div>
         <div class="form">
                 <div class="colum" v-for="lugar in lugaresUrbanos" :key="lugar.id">
-                    <img :src="lugar.image" :alt="'Imagen de ' + lugar.name">
-                    <a :href="'/lugares/' + lugar.id">{{ lugar.name }}</a>
+                    <Link :href="route('place.show.view', lugar)">
+                        <img :src="lugar.image" :alt="'Imagen de ' + lugar.name">
+                        <a :href="'/places/show.vue' + lugar.id">{{ lugar.name }}</a>
+                    </Link>
                 </div>
             </div>
         </div>
@@ -25,6 +27,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, usePage } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
 
 const { lugaresUrbanos } = usePage().props;
 </script>

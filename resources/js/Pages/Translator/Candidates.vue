@@ -4,7 +4,7 @@
     <AuthenticatedLayout>
     </AuthenticatedLayout>
     <div>
-        <h1>Candidatos subscriptos al servicio</h1>
+        <h1>Candidatos suscritos al servicio</h1>
         <section>
             <table>
                 <thead>

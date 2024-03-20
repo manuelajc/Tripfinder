@@ -67,16 +67,17 @@ Route::middleware(['auth.custom'])->group(function () {
 //->middleware('traductor');
 
 
-Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
+Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator')->middleware(['auth', 'translator']);
 Route::get('/cadidates/{service}', [TranslatorController::class, 'showCandidates'])->name('candidates.show');
 
 
-Route::resource('admin/places', PlaceController::class);
+Route::resource('admin/places', PlaceController::class)->middleware(['auth', 'admin']);
 
 Route::get('/urban', [GeneralController::class, 'mostrarUrban'])->name('Urban');
-
 Route::get('/rural', [GeneralController::class, 'mostrarRural'])->name('Rural');
-Route::post('/register/{service}', [GeneralController::class, 'registerToService'])->name('register.service');
-Route::resource('admin/lenguages', LenguageController::class);
-Route::resource('/traductor/services', ServiceController::class);
+
+Route::post('/register/{service}', [GeneralController::class, 'registerToService'])->name('register.service')->middleware(['auth', 'translator']);
+Route::resource('admin/lenguages', LenguageController::class)->middleware('admin');
+Route::resource('/traductor/services', ServiceController::class)->middleware(['auth', 'translator']);
+
 

@@ -35,12 +35,12 @@ const showingNavigationDropdown = ref(false);
                                     </div>
                                     
                                 </NavLink>
-                                <NavLink :href="route('admin')" :active="route().current('admin')">
+                                <NavLink :href="route('admin')" :active="route().current('admin')" v-if="$page.props.auth.user.role == 'admin'">
                                     <div class="text-white">
                                       Admin  
                                     </div>
                                 </NavLink>
-                                <NavLink :href="route('vista.translator')" :active="route().current('vista.translator')">
+                                <NavLink :href="route('vista.translator')" :active="route().current('vista.translator')" v-if="$page.props.auth.user.role == 'translator' || $page.props.auth.user.role == 'admin'">
                                     <div class="text-white">
                                       Mis servicios
                                     </div>

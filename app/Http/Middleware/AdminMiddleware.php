@@ -15,6 +15,12 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        // Verificar si el usuario está autenticado y tiene el rol de traductor
+        if (auth()->check() && auth()->user()->role == 'admin') {
+            return $next($request);
+        }
+
+        // Si no tiene el rol de traductor, mostrar error 403 (Prohibido)
+        abort(403, 'No tienes permisos para acceder a esta página.');
     }
 }

@@ -16,7 +16,7 @@ class TranslatorMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         // Verificar si el usuario está autenticado y tiene el rol de traductor
-        if (auth()->check() && auth()->user()->rol == 'translator') {
+        if (auth()->check() && auth()->user()->role == 'translator' || auth()->check() && auth()->user()->role == 'admin') {
             return $next($request);
         }
 

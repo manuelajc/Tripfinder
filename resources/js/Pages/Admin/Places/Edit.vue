@@ -107,7 +107,7 @@ export default {
     methods:{
         submit(){
             console.log(this.form);
-            this.form.put(route('places.update', this.place), this.form, {
+            this.form.post(route('places.update', this.place), this.form, {
                 preserveScroll: true,
                 forceFormData: true,
                 onSuccess: () => this.form.reset(),

@@ -69,13 +69,12 @@ class PlaceController extends Controller
         }
         $place->update($data); //esto se actualiza en la base de datos
         return redirect()->route('places.index')->with('success','categoria editada con exito');
-        
     }
 
     public function destroy(place $place)
     {
         $place->delete();
-        return redirect()->route('places.index')->with('success','categoria eliminada con exito');
+        return Inertia::location(route('places.index')); //redireccionar la vista y actualizar automaticamente
         
     }
 }

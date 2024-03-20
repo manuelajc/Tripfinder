@@ -3,9 +3,12 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\LenguageController;
 use App\Http\Controllers\Admin\PlaceController;
+use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\PlaceController as ControllersPlaceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TranslatorController;
-use App\Models\Place;
+use App\Models\place;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -31,7 +34,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    $lugares = place::orderBy('created_at', 'desc')->take(6)->get();
+    return Inertia::render('Dashboard', compact('lugares'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -45,6 +49,7 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified'])->name('admin');
 
 Route::get('categories/index', [CategoryController::class, 'index'])->name('admin.categories');
+Route::get('place/{place}', [GeneralController::class, 'showPlace'])->name('place.show.view');
 
 Route::resource('admin/places', PlaceController::class)->middleware(['auth', 'verified']);
 require __DIR__.'/auth.php';
@@ -61,9 +66,17 @@ Route::middleware(['auth.custom'])->group(function () {
 });
 //->middleware('traductor');
 
-//Route::middleware(['translator'])->group(function () {
-  //  Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
-//});
+
+Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
+Route::get('/cadidates/{service}', [TranslatorController::class, 'showCandidates'])->name('candidates.show');
+
 
 Route::resource('admin/places', PlaceController::class);
+
+Route::get('/urban', [GeneralController::class, 'mostrarUrban'])->name('Urban');
+
+Route::get('/rural', [GeneralController::class, 'mostrarRural'])->name('Rural');
+Route::post('/register/{service}', [GeneralController::class, 'registerToService'])->name('register.service');
 Route::resource('admin/lenguages', LenguageController::class);
+Route::resource('/traductor/services', ServiceController::class);
+

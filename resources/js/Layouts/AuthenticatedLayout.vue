@@ -13,7 +13,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="bg-dots-darker">
-            <nav class="border-b border-gray-100 bg-blue-300 bg-opacity-20">
+            <nav class="border-b border-gray-100 bg-blue-400">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -38,6 +38,11 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('admin')" :active="route().current('admin')">
                                     <div class="text-white">
                                       Admin  
+                                    </div>
+                                </NavLink>
+                                <NavLink :href="route('vista.translator')" :active="route().current('vista.translator')">
+                                    <div class="text-white">
+                                      Mis servicios
                                     </div>
                                 </NavLink>
                              
@@ -159,8 +164,3 @@ const showingNavigationDropdown = ref(false);
         </div>
     </div>
 </template>
-<style>
-.bg-dots-darker {
-    background-image: url("../Components/images/27e2902ad30a8ae51ab8d0e3f7d33962.svg");
-}
-</style>

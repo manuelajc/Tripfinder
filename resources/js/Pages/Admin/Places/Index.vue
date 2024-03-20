@@ -71,6 +71,10 @@ h1 {
     background: #899afa;
 }
 
+.btn-basic:hover{
+    background: #7185f8;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -84,7 +88,9 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;  
+    background-color: #607ec9; 
+    color: #fff;
+    text-align: center; 
 }
 
 .edit {

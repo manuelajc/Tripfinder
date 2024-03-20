@@ -1,0 +1,416 @@
+/*admin*/
+
+.admin-d {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+}
+
+.menu-admin {
+    width: 20%;
+    height: 100%;
+    color: #131313;
+    border-right: 1px solid #c5c5c5;    
+}
+
+.content {
+    width: 80%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.menu-admin h1 {
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center; 
+}
+
+.admin-title {
+    margin-bottom: 1rem; 
+}
+
+ul li {
+    padding: 10px 20px;
+    transition: .01s ease-out;
+}
+
+ul li:hover {
+    background: rgb(213, 213, 247);
+    padding: 10px 20px;
+    border-right: 3px solid #5f76f7;
+    color: #5f76f7;
+}
+
+/*welcome*/
+
+.wenas{
+    background-image: url(../Components/images/27e2902ad30a8ae51ab8d0e3f7d33962.svg);
+}
+
+.minav span{
+    color: #35D7FF;
+}
+
+.welcome{
+    color: white;
+    transform: translate(-12px, -150px);
+    margin-bottom: 50px;
+}
+
+.welcome h2{
+    text-align: center;
+    font-size: 35px;
+}
+
+.welcome p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.navcito{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    transform: translate(-16px, -130px);
+}
+
+.botoncitos{
+    font-size: 17px;
+    color: white;
+}
+
+.iniciar{
+    margin: 0 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.registrar{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.iniciar a{
+    margin: 20px;
+}
+
+.registrar a{
+    margin: 20px;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .dark\:bg-dots-lighter {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
+    }
+    .tripfinder{
+        margin-right: 50px;
+    }
+    .welcome{
+        font-size: 25px;
+        margin-right: 18px;
+    }
+    .botoncitos{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .iniciar{
+        margin-left: 10px;
+    }
+    .registrar{
+        width: 85%;
+        margin-left: 10px;
+    }
+}
+
+/*Dasborad*/
+
+.ini{
+    background-image: url(../Components/images/27e2902ad30a8ae51ab8d0e3f7d33962.svg);
+}
+
+    .grid-lugares {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 2rem;
+        grid-gap: 1rem;
+    }
+
+    .grid-lugares div {
+        height: 300px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .image{
+        border-radius: 8px;
+    }
+
+    .grid-lugares div p {
+        z-index: 20;
+        color: #ffffff;
+        font-size: 2rem;
+        text-transform: uppercase;
+        display: none;
+        transition: .3s;
+    }
+
+    .grid-lugares div:hover img{
+        opacity: .5;
+    }
+
+    .grid-lugares div:hover p {
+        display: flex;
+    }
+
+    .grid-lugares img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .3s;
+    }
+
+    .footer{
+        background-color: #6aa9e9;
+    }
+    .logo{
+        margin-left: 100px;
+    }
+    .we{
+        font-size: 20px;
+        color: #ffff;
+        margin-right: 10px;
+    }
+    .icons{
+        margin-right: 100px;
+        color: white;
+        display: flex;
+    }
+    .icons h2{
+        margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .grid-lugares{
+            display: block;   
+        }
+        .cont-image{
+            height: 350px !important;
+            margin: 10px;
+        }
+        .grid-lugares link{
+           border-radius: 50%; 
+        }
+        .we, .icons{
+            display: none;
+        }
+        .footer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo{
+            margin: 0;
+            flex-grow: 1;
+        }
+    }
+
+/*Urbanos*/
+
+.py-12{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.texto{
+    margin-left:10px;
+    margin-right:90px;
+}
+.texto h1{
+    color:black;
+    font-size:50px;
+    text-align: center;
+}
+p{
+    margin-left: 20px;
+    font-size: 27px;
+    color: black;
+    text-align: center;
+}
+.form{
+    background: rgba(154, 219, 254, 0.5);
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    margin-top: 80px;
+}
+.colum{
+    width: 310px;
+    height: 60px;
+    background: white;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+img{
+    margin: 15px;
+}
+.colum img{
+    width: 80px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.colum a{
+    widows: 100%;
+    font-size: 14px;
+    margin: 55px;
+}
+
+@media (max-width: 1024px) {
+.form {
+    width: 300px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.colum {
+    width: 240px;
+}
+
+.colum a {
+    font-size: 12px;
+    text-align: center;
+}
+
+.colum img {
+    width: 50px;
+}
+
+.py-12 {
+    justify-content: center;
+}
+
+.texto {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.texto h1 {
+    margin-left: 0;
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+}
+
+/*rurales*/
+.py-12{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.texto{
+    margin-left:10px;
+    margin-right:90px;
+}
+.texto h1{
+    color:black;
+    font-size:50px;
+    text-align: center;
+}
+p{
+    margin-left: 5px;
+    font-size: 20px;
+    color:black;
+    text-align: center;
+}
+.form{
+    background: rgba(154, 219, 254, 0.5);
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    margin-top: 80px;
+}
+.colum{
+    width: 310px;
+    height: 60px;
+    background: white;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+img{
+    margin: 15px;
+}
+.colum img{
+    width: 80px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.colum a{
+    widows: 90%;
+    font-size: 19px;
+    margin: 50px;
+}
+
+@media (max-width: 1024px) {
+.form {
+    width: 300px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.colum {
+    width: 240px;
+}
+
+.colum a {
+    font-size: 12px;
+    text-align: center;
+}
+
+.colum img {
+    width: 50px;
+}
+
+.py-12 {
+    justify-content: center;
+}
+
+.texto {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.texto h1 {
+    margin-left: 0;
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+}

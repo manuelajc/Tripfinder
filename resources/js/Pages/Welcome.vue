@@ -24,10 +24,10 @@ defineProps({
     
     <Head title="Welcome" />
 
-    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-cover bg-dots-darker wenas">
+    <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen wenas">
         <div class="minav">
                 <div class="dark:text-white sm:fixed sm:top-0 sm:left-0 p-6 text-end">
-                <p><span>T</span>RIP<span>F</span>INDE<span>R</span></p>
+                <p class="tripfinder"><span>T</span>RIP<span>F</span>INDE<span>R</span></p>
             </div>
         
             
@@ -64,14 +64,14 @@ defineProps({
                     <Link
                         :href="route('login')"
                         class="iniciar"
-                        >Iniciar sesión</Link
+                        ><a>Iniciar sesión</a></Link
                     >
 
                     <Link
                         v-if="canRegister"
                         :href="route('register')"
                         class="registrar"
-                        >Registrarse</Link
+                        ><a>Registrarse</a></Link
                     >
                    </template> 
             </div>
@@ -83,48 +83,4 @@ defineProps({
     </div>
 </template>
 
-<style>
-
-.minav span{
-    color: #35D7FF;
-}
-
-.welcome{
-    color: white;
-    transform: translate(-12px, -150px);
-}
-
-.welcome h2{
-    text-align: center;
-    font-size: 35px;
-}
-
-.welcome p{
-    font-size: 20px;
-    text-align: center;
-}
-
-.navcito{
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
-    transform: translate(-16px, -130px);
-}
-
-.botoncitos{
-    font-size: 20px;
-    color: white;
-    margin-top: 15px;
-}
-
-.iniciar{
-    margin: 0 30px;
-}
-
-@media (prefers-color-scheme: dark) {
-    .dark\:bg-dots-lighter {
-        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
-    }
-}
-</style>
+<style src="/public/css/style.css"></style>

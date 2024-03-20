@@ -36,7 +36,7 @@ export default {
     },
 
     props: [
-        'lenguages'
+        'lenguages',
     ],
 
     methods: {

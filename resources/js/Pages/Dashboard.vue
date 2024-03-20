@@ -1,14 +1,13 @@
 <template>
-   
     <Head title="Dashboard" />
 
 <AuthenticatedLayout>
-    <div class="py-12">
-        <div class="p-6 text-black text-center text-5xl font-bold">Busca tus siguientes vacaciones!</div>
+    <div class="ini py-12">
+        <div class="p-6 text-white text-center text-5xl font-bold">Busca tus siguientes vacaciones!</div>
         <!-- Botones -->
         <div class="flex justify-center mt-6">
-            <Link :href="route('Urban')" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mr-4">Urbanos</Link>
-            <Link :href="route('Rural')"class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Rurales</Link>
+            <Link :href="route('Urban')" class="bg-blue-400 hover:bg-blue-200 hover:text-black text-white font-bold py-2 px-4 rounded mr-4">Urbanos</Link>
+            <Link :href="route('Rural')"class="bg-blue-400 hover:bg-blue-200 hover:text-black text-white font-bold py-2 px-4 rounded">Rurales</Link>
         </div>
     </div>
     <!--Aca se van agregar los lugares para los tours-->
@@ -18,9 +17,9 @@
 
     <div class="grid-lugares">
         
-        <div v-for="lugar in lugares">
+        <div class="cont-image" v-for="lugar in lugares">
             <Link :href="route('place.show.view', lugar)">
-                <img :src="lugar.image" :alt="lugar.name">
+                <img class="image" :src="lugar.image" :alt="lugar.name">
             </Link>
             <p class="">{{ lugar.name }}</p>
         </div>
@@ -39,8 +38,8 @@
         </div>
 
         <div class="icons">
-            <h2>holi</h2>
-            <h2>hola</h2>
+            <h2>F</h2>
+            <h2>W</h2>
         </div>
     </div>
 
@@ -49,6 +48,7 @@
 </template>
 
 <script>
+
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { Link } from '@inertiajs/vue3';
@@ -71,86 +71,4 @@ export default {
 
 </script>
 
-<style >
-
-    .grid-lugares {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding: 2rem;
-        grid-gap: 1rem;
-    }
-
-    .grid-lugares div {
-        height: 300px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        background: #2c2c2c;
-    }
-
-    .grid-lugares div p {
-        z-index: 20;
-        color: #6aa9e9;
-        font-size: 2rem;
-        text-transform: uppercase;
-        display: none;
-        transition: .3s;
-    }
-
-    .grid-lugares div:hover img{
-        opacity: .5;
-    }
-
-    .grid-lugares div:hover p {
-        display: flex;
-    }
-
-    .grid-lugares img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: .3s;
-    }
-
-    .footer{
-        background-color: #6aa9e9;
-    }
-    .logo{
-        border: 1px solid black;
-        margin-left: 100px;
-    }
-    .we{
-        border: 1px solid black;
-        font-size: 20px;
-        color: #ffff;
-        margin-right: 10px;
-    }
-    .icons{
-        border: 1px solid black;
-        margin-right: 100px;
-        display: flex;
-    }
-    .icons h2{
-        margin-right: 10px;
-    }
-
-    @media (max-width: 768px) {
-        .we, .icons{
-            display: none;
-        }
-        .footer{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo{
-            margin: 0;
-            flex-grow: 1;
-        }
-    }
-</style>
+<style src="/public/css/style.css"></style>

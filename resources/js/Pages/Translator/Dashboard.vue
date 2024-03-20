@@ -4,11 +4,9 @@
     <AuthenticatedLayout>
     </AuthenticatedLayout>
     <div>
-        <h1>Traductor</h1>
-        
+        <h1>Mis Servicios</h1>
         <section>
             <div>
-                <h3>Mis servicios</h3>
                 <Link :href="route('services.create')" class="btn-basic">Crear un servicio</Link>
             </div>
             <table>
@@ -23,15 +21,21 @@
                 </thead>
                 <tbody>
                     <tr v-for="service in services">
+
                         <td>{{ service.id }}</td>
                         <td>{{ service.description }}</td>
                         <td>{{ service.lenguage.name }}</td>
                         <td>{{ service.place.name }}</td>
                         <td>{{ service.tarifa }}</td>
-                        <td>{{ service.candidates }}</td>
+                        <td>
+                            {{ service.candidates }}
+                            <Link :href="route('candidates.show', service)">
+                                ver candidatos
+                            </Link>
+                        </td>
                         <td>
                             <Link :href="route('services.edit', service)" class="edit">Editar</Link>
-                            <button @click="destroyService(service)" class="delete">Eliminar</button>
+                            <button @click="destroyLenguage(service)" class="delete">Eliminar</button>
                         </td>
                     </tr>
                 </tbody>
@@ -54,18 +58,10 @@ export default {
         Link,
     },
 
-    props: [
-        'services'
-    ],
-
-    methods: {
-        destroyService(service) {
-            Inertia.delete(route('services.destroy', service), {
-                preserveScroll: true,
-                preserveState: true,
-            })
-        }
+    props: {
+        services: Object,
     }
+
 }
 </script>
 

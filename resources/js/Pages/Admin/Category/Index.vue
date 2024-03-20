@@ -57,5 +57,9 @@ th {
     color: #fff; 
     text-align: center;
 }
-
+@media screen and (max-width: 600px) {
+    table {
+        overflow-x: auto; /* Añade una barra de desplazamiento horizontal en pantallas pequeñas */
+    }
+}
 </style>

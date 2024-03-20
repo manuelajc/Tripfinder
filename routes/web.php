@@ -68,6 +68,7 @@ Route::middleware(['auth.custom'])->group(function () {
 
 
 Route::get('/translator', [TranslatorController::class, 'vistaTranslator'])->name('vista.translator');
+Route::get('/cadidates/{service}', [TranslatorController::class, 'showCandidates'])->name('candidates.show');
 
 
 

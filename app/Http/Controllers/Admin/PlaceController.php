@@ -74,7 +74,7 @@ class PlaceController extends Controller
     public function destroy(place $place)
     {
         $place->delete();
-        return redirect()->route('places.index')->with('success','categoria eliminada con exito');
+        return Inertia::location(route('places.index')); //redireccionar la vista y actualizar automaticamente
         
     }
 }

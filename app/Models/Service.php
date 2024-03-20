@@ -18,4 +18,9 @@ class Service extends Model
     public function place() {
         return $this->belongsTo('App\Models\place');
     }
+
+    public function candidates()
+    {
+        return $this->belongsToMany('App\Models\User', 'inscriptions');
+    }
 }

@@ -12,8 +12,10 @@
         <div class="form">
                 <div class="colum" v-for="lugar in lugaresUrbanos" :key="lugar.id">
                     <Link :href="route('place.show.view', lugar)">
-                        <img :src="lugar.image" :alt="'Imagen de ' + lugar.name">
-                        <a :href="'/places/show.vue' + lugar.id">{{ lugar.name }}</a>
+                        <div class="prueba">
+                            <img :src="lugar.image" :alt="'Imagen de ' + lugar.name">
+                            <a class="nomlugar" :href="'/places/show.vue' + lugar.id">{{ lugar.name }}</a>
+                        </div>
                     </Link>
                 </div>
             </div>
@@ -34,7 +36,33 @@ const { lugaresUrbanos } = usePage().props;
 
 <style>
 
+    .prueba{
+        display: flex;
+        align-items: center;
+        width: 310px;
+        height: 60px;
+        background: white;
+        margin-top: 15px;
+        border-radius: 5px;
+        display: flex;
+    }
+
+    .prueba img{
+        display: table-column;
+        widows: 100%;
+        width: 60px;
+        height: 50px;
+        object-fit: cover;
+        margin-left: 5px;
+        border-radius: 5px;
+    }
+
+    .prueba .nomlugar{
+        margin-left: 10px;
+    }
+
   .py-12{
+        background-image: url(../Components/images/27e2902ad30a8ae51ab8d0e3f7d33962.svg);
         display:flex;
         align-items: center;
         flex-wrap: wrap;
@@ -44,18 +72,18 @@ const { lugaresUrbanos } = usePage().props;
         margin-right:90px;
     }
     .texto h1{
-        color:black;
+        color:white;
         font-size:50px;
         text-align: center;
     }
     p{
         margin-left: 20px;
         font-size: 27px;
-        color: black;
+        color: white;
         text-align: center;
     }
     .form{
-        background: rgba(154, 219, 254, 0.5);
+        background: rgba(253, 253, 253, 0.2);
         width: 350px;
         height: 350px;
         border-radius: 10px;
@@ -63,28 +91,9 @@ const { lugaresUrbanos } = usePage().props;
         padding: 20px;
         margin-top: 80px;
     }
-    .colum{
-        width: 310px;
-        height: 60px;
-        background: white;
-        margin-top: 15px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-    }
-    img{
-        margin: 15px;
-    }
-    .colum img{
-        width: 80px;
-        height: 50px;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-    .colum a{
-        widows: 100%;
-        font-size: 14px;
-        margin: 55px;
+
+    .nomlugar{
+        margin-left: 110px;
     }
 
     @media (max-width: 1024px) {
@@ -100,7 +109,8 @@ const { lugaresUrbanos } = usePage().props;
 
     .colum a {
         font-size: 12px;
-        text-align: center;
+        text-align: end;
+        margin: 40px;
     }
 
     .colum img {

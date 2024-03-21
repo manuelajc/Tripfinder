@@ -37,8 +37,8 @@ ul li {
 }
 
 ul li:hover {
-    background: rgb(213, 213, 247);
+    background: rgb(152, 196, 249);
     padding: 10px 20px;
-    border-right: 3px solid #5f76f7;
-    color: #5f76f7;
+    border-right: 3px solid #1345e8;
+    color: #fefefe;
 }

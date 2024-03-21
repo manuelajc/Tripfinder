@@ -4,7 +4,7 @@
     <AuthenticatedLayout>
         <div class="admin-d ca">
             <div class="menu-admin">
-                <h1>Bienvenido Administrador</h1>
+                <h1>Tablas Administrador</h1>
                 <ul>
                     <Link :href="route('admin.categories')" :class="classes"><li>Categorias</li></Link>
                     <Link :href="route('lenguages.index')" :class="classes"><li>Lenguajes</li></Link>

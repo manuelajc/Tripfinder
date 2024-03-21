@@ -93,6 +93,9 @@ export default {
 
 .place-image {
     height: 300px;
+    border: 1px solid rgb(127, 191, 243);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(40, 200, 300, 0.9);
     overflow: hidden;
 }
 
@@ -176,5 +179,17 @@ export default {
 
 .custom-message button:hover {
     background-color: #4e87c8;
+}
+
+@media screen and (max-width: 768px) {
+    .show-view header {
+        grid-template-columns: 1fr; 
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .servicios {
+        grid-template-columns: 1fr;
+    }
 }
 </style>

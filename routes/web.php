@@ -76,7 +76,7 @@ Route::resource('admin/places', PlaceController::class)->middleware(['auth', 'ad
 Route::get('/urban', [GeneralController::class, 'mostrarUrban'])->name('Urban');
 Route::get('/rural', [GeneralController::class, 'mostrarRural'])->name('Rural');
 
-Route::post('/register/{service}', [GeneralController::class, 'registerToService'])->name('register.service')->middleware(['auth', 'translator']);
+Route::post('/register/{service}', [GeneralController::class, 'registerToService'])->name('register.service')->middleware(['auth']);
 Route::resource('admin/lenguages', LenguageController::class)->middleware('admin');
 Route::resource('/traductor/services', ServiceController::class)->middleware(['auth', 'translator']);
 

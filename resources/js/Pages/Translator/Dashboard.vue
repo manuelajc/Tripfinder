@@ -29,9 +29,11 @@
                         <td>{{ service.tarifa }}</td>
                         <td>
                             {{ service.candidates }}
-                            <Link :href="route('candidates.show', service)">
+                            <div class="vercandi">
+                             <Link :href="route('candidates.show', service)">
                                 ver candidatos
-                            </Link>
+                            </Link>   
+                            </div>
                         </td>
                         <td>
                             <Link :href="route('services.edit', service)" class="edit">Editar</Link>
@@ -66,6 +68,15 @@ export default {
 </script>
 
 <style>
+
+.vercandi{
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    padding: 2px;
+    background-color:#899afa;
+    border-radius: 5px;
+}
 
 h1 {
     font-size: 2rem;
